@@ -8,11 +8,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'card',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../card/card.module#CardPageModule'
           }
         ]
       },
@@ -35,23 +35,30 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'cardListing',
+        children: [
+          {
+            path: '',
+            loadChildren: '../card/card.module#CardPageModule'
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/card',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/card',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}

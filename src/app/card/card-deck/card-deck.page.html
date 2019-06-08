@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Mazos de Cartas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-card-list
+    *ngFor="let cardDeck of cardDecks" [items]="cardDeck.types"
+    [listName]="cardDeck.name"></app-card-list>
+</ion-content>
